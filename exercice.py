@@ -24,8 +24,8 @@ def anagrams(words: list = None) -> bool:
     # print(areAnagrams) MA SOLUTION QUI FONCTIONNE
     # return areAnagrams
     liste1, liste2 = [],[]
-        if words is None:
-            words = [sorted(input()), sorted(input())]
+    if words is None:
+        words = [sorted(input()), sorted(input())]
 
     return words[0] == words[1]
 
@@ -53,27 +53,32 @@ def anagrams3(words: list = None) -> bool:
 
 def contains_doubles(items: list) -> bool:
 
-    items = set()
-    
-    for elem in  items:
-        if elem in items:
-            return True
-
-    return False
+    uniques = set(items)
+    return len(items) == len(uniques)
 
 
-def best_grades(student_grades: dict) -> dict:
-    # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
-    return {}
+# def best_grades(student_grades: dict) -> dict:
+#     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
+#     for elem in student_grades:
 
+#     return {}
 
 def histogram(sentence: str) -> tuple:
     # TODO: Créer l'histogramme a l'aide d'un dictionnaire
     #       Afficher l'histogramme et les lettres les plus fréquentes
     #       Retourner l'histogramme et le tableau de lettres
+    letters = []
+    dictionnaire = {}
+    for let in range(len(sentence)):
+        if sentence.count(sentence[let]) >= 5:
+            letters.append(let)
+            dictionnaire["{let}"]=sentence.count(let)
+    print(dict)
+    print(letters)
+    return dict, letters
 
-    return {}, []
-
+sentence = input("Donnez une phrase")
+histogram(sentence)
 
 def get_recipes():
     # TODO: Demander le nom d'une recette, puis ses ingrédients et enregistrer dans une structure de données 
@@ -92,8 +97,8 @@ def main() -> None:
     #print(f"On vérifie les anagrammes...")
     #anagrams()
 
-    my_list = [3, 3, 5, 6, 1, 1]
-    print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
+    # my_list = [3, 3, 5, 6, 1, 1]
+    # print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
 
     # grades = {"Bob": [90, 65, 20], "Alice": [85, 75, 83]}
     # name, result = best_grades(grades)
@@ -106,5 +111,5 @@ def main() -> None:
     # print_recipe(recipes)
 
 
-if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+        main()
